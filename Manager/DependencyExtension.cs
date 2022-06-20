@@ -5,6 +5,7 @@ using Data;
 using Data.Repository;
 using Data.UnitOfWork;
 using Manager.IService;
+using Manager.Mapping;
 using Manager.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,17 +28,19 @@ namespace Manager
             );
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<>), typeof(Service<>));
-
+            services.AddAutoMapper(typeof(MapProfile));
 
             //Repository Katmanı
             services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IPersonnelRepository, PersonnelRepository>();
 
             //Service Katmanı
             services.AddScoped<IBrandService, BrandService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IPersonnelService, PersonnelService>();
 
         }
     }

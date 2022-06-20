@@ -4,6 +4,7 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220620190117_fixed_v1")]
+    partial class fixed_v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Brands", (string)null);
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("Core.Entity.Category", b =>
@@ -79,7 +81,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Core.Entity.Department", b =>
@@ -109,7 +111,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("Core.Entity.Expenses", b =>
@@ -146,7 +148,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Expenses", (string)null);
+                    b.ToTable("Expenses");
                 });
 
             modelBuilder.Entity("Core.Entity.Mailling", b =>
@@ -186,7 +188,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Maillings", (string)null);
+                    b.ToTable("Maillings");
                 });
 
             modelBuilder.Entity("Core.Entity.Meeting", b =>
@@ -222,7 +224,7 @@ namespace Data.Migrations
 
                     b.HasIndex("PersonnelId", "MemberId", "Id");
 
-                    b.ToTable("Meetings", (string)null);
+                    b.ToTable("Meetings");
                 });
 
             modelBuilder.Entity("Core.Entity.Member", b =>
@@ -275,7 +277,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Member", (string)null);
+                    b.ToTable("Member");
                 });
 
             modelBuilder.Entity("Core.Entity.MemberOrderHistory", b =>
@@ -307,7 +309,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("MemberOrderHistory", (string)null);
+                    b.ToTable("MemberOrderHistory");
                 });
 
             modelBuilder.Entity("Core.Entity.Order", b =>
@@ -359,7 +361,7 @@ namespace Data.Migrations
 
                     b.HasIndex("MemberId", "Id", "TotalPrice");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Core.Entity.OrderProducts", b =>
@@ -394,7 +396,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProductId", "OrderId", "Id");
 
-                    b.ToTable("OrderProducts", (string)null);
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("Core.Entity.Personnel", b =>
@@ -447,7 +449,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Personnels", (string)null);
+                    b.ToTable("Personnels");
                 });
 
             modelBuilder.Entity("Core.Entity.PersonnelDepartment", b =>
@@ -479,7 +481,7 @@ namespace Data.Migrations
 
                     b.HasIndex("PersonnelId", "DepartmentId", "Id");
 
-                    b.ToTable("PersonnelDepartments", (string)null);
+                    b.ToTable("PersonnelDepartments");
                 });
 
             modelBuilder.Entity("Core.Entity.PersonnelSales", b =>
@@ -517,7 +519,7 @@ namespace Data.Migrations
 
                     b.HasIndex("OrderId", "SalesId", "PersonnelId", "Id");
 
-                    b.ToTable("PersonnelSales", (string)null);
+                    b.ToTable("PersonnelSales");
                 });
 
             modelBuilder.Entity("Core.Entity.ProductBrand", b =>
@@ -549,7 +551,7 @@ namespace Data.Migrations
 
                     b.HasIndex("BrandId", "ProductId", "Id");
 
-                    b.ToTable("ProductBrands", (string)null);
+                    b.ToTable("ProductBrands");
                 });
 
             modelBuilder.Entity("Core.Entity.ProductCategory", b =>
@@ -581,7 +583,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProductId", "CategoryId", "Id");
 
-                    b.ToTable("ProductCategories", (string)null);
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Core.Entity.ProductDocument", b =>
@@ -618,7 +620,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProductId", "Id");
 
-                    b.ToTable("ProductDocuments", (string)null);
+                    b.ToTable("ProductDocuments");
                 });
 
             modelBuilder.Entity("Core.Entity.Products", b =>
@@ -658,7 +660,7 @@ namespace Data.Migrations
 
                     b.HasIndex("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Core.Entity.ProductStock", b =>
@@ -690,7 +692,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProductId", "Id");
 
-                    b.ToTable("ProductStocks", (string)null);
+                    b.ToTable("ProductStocks");
                 });
 
             modelBuilder.Entity("Core.Entity.Sales", b =>
@@ -737,7 +739,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProductId", "Id", "Price", "TotalPrice", "MemberId", "PersonnelId");
 
-                    b.ToTable("Sales", (string)null);
+                    b.ToTable("Sales");
                 });
 #pragma warning restore 612, 618
         }

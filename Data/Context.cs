@@ -31,6 +31,8 @@ namespace Data
         public DbSet<Products> Products { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
         public DbSet<Sales> Sales { get; set; }
+        public DbSet<Member> Member { get; set; }
+        public DbSet<MemberOrderHistory> MemberOrderHistory { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
