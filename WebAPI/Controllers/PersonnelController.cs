@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Core.DTO;
 using Core.Entity;
+using DTO;
 using Manager.IService;
 using Manager.Security.Hashing;
 using Microsoft.AspNetCore.Mvc;

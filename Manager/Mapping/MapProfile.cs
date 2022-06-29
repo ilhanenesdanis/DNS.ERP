@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
-using Core.DTO;
 using Core.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DTO;
 
 namespace Manager.Mapping
 {

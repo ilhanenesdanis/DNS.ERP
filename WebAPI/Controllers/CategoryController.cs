@@ -1,5 +1,6 @@
-﻿using Core.DTO;
+﻿
 using Core.Entity;
+using DTO;
 using Manager.IService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
