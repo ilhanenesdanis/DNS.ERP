@@ -9,6 +9,8 @@ namespace Manager.Mapping
         public MapProfile()
         {
             CreateMap<Personnel, PersonnelDTO>().ReverseMap();
+            CreateMap<Category, CategoryDTO>().ReverseMap();
+            CreateMap<Brand, BrandDTO>().ReverseMap();
         }
     }
 }

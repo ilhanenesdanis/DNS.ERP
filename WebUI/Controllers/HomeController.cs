@@ -16,10 +16,14 @@ namespace WebUI.Controllers
             _configuration = configuration;
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    var url = _configuration["UrlVariable"] + UrlHelpers.GetAllPersonnel;
+        //    var result = _apiHandler.GetApi<ResultDTO<PersonnelDTO>>(url);
+        //    return View();
+        //}
+        public IActionResult Dasboard()
         {
-            var url = _configuration["UrlVariable"] + UrlHelpers.GetAllPersonnel;
-            var result = _apiHandler.GetApi<ResultDTO<PersonnelDTO>>(url);
             return View();
         }
     }
